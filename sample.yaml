@@ -1,0 +1,13 @@
+
+# Define Anchor by using &
+environment: &env
+  env_1: COMMON_ENV1
+  env_2: COMMON_ENV2
+# Use alias with anchor *
+service1:
+  *env
+# Update a part of properties
+service2:
+  <<: *env
+  env_1: UPDATE_ENV1
+  env_3: SERVICE_ENV3
